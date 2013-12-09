@@ -162,7 +162,7 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 26</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@squeek</span> = <span class="ruby-constant">Squeek</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">squeek_params</span>)
 
@@ -202,7 +202,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 56</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-ivar">@squeek</span>.<span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -236,7 +236,7 @@
 
           
           <div class="method-source-code" id="edit-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- edit-source -->
@@ -267,7 +267,8 @@
           <div class="method-source-code" id="index-source">
             <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
-  <span class="ruby-ivar">@squeeks</span> = <span class="ruby-constant">Squeek</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-ivar">@squeeks</span> = <span class="ruby-constant">Squeek</span>.<span class="ruby-identifier">all</span>.<span class="ruby-identifier">order</span>(<span class="ruby-identifier">created_at</span><span class="ruby-operator">:</span> <span class="ruby-value">:desc</span>)
+  <span class="ruby-ivar">@squeek</span> = <span class="ruby-constant">Squeek</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- index-source -->
           
@@ -295,7 +296,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 16</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
   <span class="ruby-ivar">@squeek</span> = <span class="ruby-constant">Squeek</span>.<span class="ruby-identifier">new</span>
 <span class="ruby-keyword">end</span></pre>
@@ -325,7 +326,7 @@
 
           
           <div class="method-source-code" id="show-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 12</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 13</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- show-source -->
@@ -354,7 +355,7 @@
 
           
           <div class="method-source-code" id="update-source">
-            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 42</span>
+            <pre><span class="ruby-comment"># File app/controllers/squeeks_controller.rb, line 43</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-keyword">if</span> <span class="ruby-ivar">@squeek</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">squeek_params</span>)
