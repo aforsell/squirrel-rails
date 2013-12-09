@@ -1,0 +1,29 @@
+<h1>Listing squeeks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Message</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @squeeks.each do |squeek| %>
+      <tr>
+        <td><%= squeek.user %></td>
+        <td><%= squeek.message %></td>
+        <td><%= link_to 'Show', squeek %></td>
+        <td><%= link_to 'Edit', edit_squeek_path(squeek) %></td>
+        <td><%= link_to 'Destroy', squeek, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Squeek', new_squeek_path %>
