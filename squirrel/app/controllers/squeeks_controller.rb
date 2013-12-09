@@ -4,7 +4,8 @@ class SqueeksController < ApplicationController
   # GET /squeeks
   # GET /squeeks.json
   def index
-    @squeeks = Squeek.all
+    @squeeks = Squeek.all.order(created_at: :desc)
+    @squeek = Squeek.new
   end
 
   # GET /squeeks/1
