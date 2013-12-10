@@ -218,6 +218,14 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails generate scaffold Squeek
 action@squirrel-rails-59591:~/workspace/squirrel$                                  
                 </pre>
                 <p>Jotta ohjelmiston tiedot saadaan muiden käyttäjien nähtäville, se pitää tallentaa palvelimelle. Tietovarastona käytetään tietokantaa, jonne data säilötään. Tietokannalle pitää kertoa, mitä sen pitää ostata tallentaa. Tämä tehdään komennolla <code>rake db:migrate</code>.</p>
+                <pre>
+action@squirrel-rails-59591:~/workspace/squirrel$ rake db:migrate
+==  CreateSqueeks: migrating ==================================================
+-- create_table(:squeeks)
+   -> 0.0017s
+==  CreateSqueeks: migrated (0.0068s) =========================================
+action@squirrel-rails-59591:~/workspace/squirrel$
+                </pre>
               </div>
             </div>
 
