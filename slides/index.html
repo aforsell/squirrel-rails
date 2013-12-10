@@ -192,7 +192,45 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails server
                     </ul>
                     Molemmat taulun kentät ovat tekstimuotoista dataa.
                   </p>
-                  <p>Yleisesti datalle halutaan tehdä jotakin seuraavasta neljästä asiasta: <em>Luonti</em>, <em>Luku</em>, <em>Päivitys</em> tai <em>Poisto</em>. Tämä on sen verran perustavanlaatuista kamaa, että sille on kehitetty ihan oma termikin: <em>CRUD (Create, Read, Update and Delete)</em>. Käyttäjä haluaa siis tehdä nämä toimenpiteet käyttöliittymän kautta. Mahdollisuus tähän pitää tarjota näkymässä <em>(view)</em> ja käsitellä kontrollerissa <em>(controller)</em>.</p>
+                  <p>Yleisesti datalle halutaan tehdä jotakin seuraavasta neljästä asiasta: <em>Luonti</em>, <em>Luku</em>, <em>Päivitys</em> tai <em>Poisto</em>. Tämä on sen verran perustavanlaatuista kamaa, että sille on kehitetty ihan oma termikin: <em>CRUD (Create, Read, Update and Delete)</em>. Käyttäjä haluaa siis tehdä nämä toimenpiteet käyttöliittymän kautta. Mahdollisuus tähän pitää tarjota näkymässä <em>(view)</em> ja käsitellä kontrollerissa <em>(controller)</em>. Tässä kohtaa Rails näyttää ensi kertaa hienoutensa. Ohjelman sisäisestä toiminnasta ei tarvitse tietää juuri enempää, että saa jotain toimivaa aikaiseksi. Riittää, kun tietää mitä dataa haluaa käsitellä - Rails hoitaa loput.</p>
+                <p>Rails tuo mukanaan mahdollisuuden käyttää <em>generaattoreita</em>. Jokaiselle osiolle MVC:ssä on oma generaattorinsa, mutta tarjolla on myös mahdollisuus luoda niinkutsuttu rakennusteline <em>scaffold</em>, joka luo tarvittavan ohjelmakoodin mallia, näkymää ja kontrolleria varten. Tämä tapahtuu käskyllä <code>rails generate scaffold &lt;ResurssinNimi&gt; &lt;kentän_nimi&gt;:&lt;kentän_tietotyyppi&gt;</code> meidän tapauksessamme siis</p>
+                <pre>
+action@squirrel-rails-59591:~/workspace/squirrel$ rails generate scaffold Squeek user:string message:text 
+      invoke  active_record
+      create    db/migrate/20131210212012_create_squeeks.rb
+      create    app/models/squeek.rb  
+      invoke    test_unit
+      create      test/models/squeek_test.rb
+      create      test/fixtures/squeeks.yml
+      invoke  resource_route
+       route    resources :squeeks
+      invoke  scaffold_controller
+      create    app/controllers/squeeks_controller.r
+      invoke    erb
+      create      app/views/squeeks
+      create      app/views/squeeks/index.html.erb
+      create      app/views/squeeks/edit.html.erb
+      create      app/views/squeeks/show.html.erb
+      create      app/views/squeeks/new.html.erb
+      create      app/views/squeeks/_form.html.erb
+      invoke    test_unit
+      create      test/controllers/squeeks_controller_test.rb
+      invoke    helper
+      create      app/helpers/squeeks_helper.rb
+      invoke      test_unit
+      create        test/helpers/squeeks_helper_test.rb
+      invoke    jbuilder
+      create      app/views/squeeks/index.json.jbuilder
+      create      app/views/squeeks/show.json.jbuilder
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/squeeks.js.coffee
+      invoke    scss
+      create      app/assets/stylesheets/squeeks.css.scs
+      invoke  scss
+      create    app/assets/stylesheets/scaffolds.css.scss
+action@squirrel-rails-59591:~/workspace/squirrel$                                  
+                </pre>
               </div>
             </div>
 
