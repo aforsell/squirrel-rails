@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Antti Forsell">
-    <link rel="shortcut icon" href="../../docs-assets/ico/favicon.png">
+    <meta name="author" content="Heidi Tähtinen">
 
     <title>Squirrel</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -20,7 +20,7 @@
     <![endif]-->
 
     <!-- Custom styles for this template -->
-    <link href="css/carousel.css" rel="stylesheet">
+    <!--<link href="css/carousel.css" rel="stylesheet">-->
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -144,7 +144,7 @@ action@squirrel-rails-59591:~$
               </pre>
               <img style="border: 1px solid black; margin: 5px;" class="pull-left" src="images/nitrous-filebrowser.png">
               <p>Sivun vasemmassa reunassa oleva laatikko kuvaa hakemistorakennetta. Kotihakemiston <em>~</em> alla on kansio <em>workspace</em>. Projekti luodaan tänne, eli siirrytään ensin komentotulkissa oikeaan paikkaan <code>cd workspace</code> -komennolla.</p>
-              <span class="clearfix"></span>
+              <span class="clearfix">&nbsp;</span>
               <pre>
 action@squirrel-rails-59591:~$ cd workspace
 action@squirrel-rails-59591:~/workspace$ 
@@ -178,7 +178,7 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails server
             <div class="row featurette">
               <div class="col-md-12">
                 <h2 class="featurette-heading" style="margin-top: 10px">Sovelluksen runko</h2>
-                  <p>Eräs Railsin hienouksista on se, että ohjelman sisäisestä toiminnasta ei tarvitse tietää juuri mitään, että saa jotain toimivaa aikaiseksi. Rails tuo mukanaan mahdollisuuden käyttää <em>generaattoreita</em>. Jokaiselle Rails-ohjelmiston komponentille on oma generaattorinsa, mutta tarjolla on myös mahdollisuus luoda niinkutsuttu rakennusteline <em>scaffold</em>, joka luo tarvittavan rungon ohjelmakoodille. Tämä tapahtuu käskyllä <code>rails generate scaffold &lt;ResurssinNimi&gt; &lt;kentän_nimi&gt;:&lt;kentän_tietotyyppi&gt;</code>.</p>
+                  <p>Eräs Railsin hienouksista on se, että ohjelman sisäisestä toiminnasta ei tarvitse tietää juuri mitään, että saa jotain toimivaa aikaiseksi. Rails tuo mukanaan mahdollisuuden käyttää <em>generaattoreita</em>. Jokaiselle Rails-ohjelmiston komponentille on oma generaattorinsa, mutta tarjolla on myös mahdollisuus luoda niinkutsuttu rakennusteline <em>scaffold</em>, joka luo tarvittavan rungon ohjelmakoodille. Tämä tapahtuu käskyllä <code>rails generate scaffold &lt;ResurssinNimi&gt; &lt;kentän_nimi&gt;:&lt;kentän_tietotyyppi&gt; ...</code>.</p>
                   <p>Meidän tapauksessamme siis haluamme luoda viestejä (Squeek), jotka sisältävät viestin lähettäjän nimimerkin sekä itse viestin:</p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rails generate scaffold Squeek user:string message:text 
@@ -226,6 +226,20 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rake db:migrate
 ==  CreateSqueeks: migrated (0.0068s) =========================================
 action@squirrel-rails-59591:~/workspace/squirrel$
                 </pre>
+                <span class="label label-important">Important</span>
+                <div class="alert"><p>Tässä editoidaan config/routes.rb root =&gt; "squeeks#index"</p></div>
+                <p>Tässä kohtaa ohjelman perustoiminnallisuus onkin valmis, eli ei muuta kuin testaamaan <code>rails server</code>.</p>
+                <pre>
+action@squirrel-rails-59591:~/workspace/squirrel$ rails server
+=&gt; Booting WEBrick
+=&gt; Rails 4.0.0 application starting in development on http://0.0.0.0:3000
+=&gt; Run `rails server -h` for more startup options
+=&gt; Ctrl-C to shutdown server 
+[2013-12-10 22:46:34] INFO  WEBrick 1.3.1
+[2013-12-10 22:46:34] INFO  ruby 2.0.0 (2013-06-27) [x86_64-linux]
+[2013-12-10 22:46:34] INFO  WEBrick::HTTPServer#start: pid=655 port=3000
+                </pre>
+                <p>Ja tämän jälkeen taas sivuston ylävalikosta Preview ja Port 3000</p>
               </div>
             </div>
 
