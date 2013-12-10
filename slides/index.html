@@ -177,23 +177,9 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails server
 
             <div class="row featurette">
               <div class="col-md-12">
-                <h2 class="featurette-heading" style="margin-top: 10px">Squee ja MVC-arkkitehtuuri</h2>
-                <p><em>MVC</em> tulee sanoista <em>Model, View, Controller</em>. Jotta voidaan paremmin ymmärtää, mitä seuraavaksi oikeastaan tehdään, lienee paikallan avata vähän tätä käsitettä. MVC jakaa ohjelmiston arkkitehtuurin kolmeen osaan:
-                  <ul>
-                    <li><em>Model</em> mallintaa tallennettavaa dataa ja toimii välittäjänä tietovaraston kuten tietokannan kanssa.</li>
-                    <li><em>View</em> käsittelee kaikkea sitä, mitä ohjelmiston käyttäjälle näytetään.</li>
-                    <li><em>Controller</em> käsittelee ohjelmistoon saapuvat pyynnöt sekä toimi kahden aieamman välisenä kommunikaatiokanavana.</li>
-                  </ul>
-                  </p>
-                  <p>Keskitytään ensimmäisenä tietomalliin. Squirrel-ohjelmistossamme on tarkoituksena voida luoda viestejä kaiken kansan nähtäväksi nimimerkkiä käyttäen. Jotta tiedot saadaan jatkossa muiden käyttäjien nähtäväksi, ne pitää tallentaa palvelimelle. Tähän tarkoitukseen käytetään hyvin usein jonkinlaista tietokantaa. Tietokanta sisältää tauluja, jotka määrittelevät minkälaista tietoa kuhunkin tauluun voi talletta. Esimerkkiohjelmamme tarvitsee vain yhden yksinkertaisen taulun:
-                    <ul>
-                      <li>Nimimerkki</li>
-                      <li>Viesti</li>
-                    </ul>
-                    Molemmat taulun kentät ovat tekstimuotoista dataa.
-                  </p>
-                  <p>Yleisesti datalle halutaan tehdä jotakin seuraavasta neljästä asiasta: <em>Luonti</em>, <em>Luku</em>, <em>Päivitys</em> tai <em>Poisto</em>. Tämä on sen verran perustavanlaatuista kamaa, että sille on kehitetty ihan oma termikin: <em>CRUD (Create, Read, Update and Delete)</em>. Käyttäjä haluaa siis tehdä nämä toimenpiteet käyttöliittymän kautta. Mahdollisuus tähän pitää tarjota näkymässä <em>(view)</em> ja käsitellä kontrollerissa <em>(controller)</em>. Tässä kohtaa Rails näyttää ensi kertaa hienoutensa. Ohjelman sisäisestä toiminnasta ei tarvitse tietää juuri enempää, että saa jotain toimivaa aikaiseksi. Riittää, kun tietää mitä dataa haluaa käsitellä - Rails hoitaa loput.</p>
-                <p>Rails tuo mukanaan mahdollisuuden käyttää <em>generaattoreita</em>. Jokaiselle osiolle MVC:ssä on oma generaattorinsa, mutta tarjolla on myös mahdollisuus luoda niinkutsuttu rakennusteline <em>scaffold</em>, joka luo tarvittavan ohjelmakoodin mallia, näkymää ja kontrolleria varten. Tämä tapahtuu käskyllä <code>rails generate scaffold &lt;ResurssinNimi&gt; &lt;kentän_nimi&gt;:&lt;kentän_tietotyyppi&gt;</code> meidän tapauksessamme siis</p>
+                <h2 class="featurette-heading" style="margin-top: 10px">Sovelluksen runko</h2>
+                  <p>Eräs Railsin hienouksista on se, että ohjelman sisäisestä toiminnasta ei tarvitse tietää juuri mitään, että saa jotain toimivaa aikaiseksi. Rails tuo mukanaan mahdollisuuden käyttää <em>generaattoreita</em>. Jokaiselle Rails-ohjelmiston komponentille on oma generaattorinsa, mutta tarjolla on myös mahdollisuus luoda niinkutsuttu rakennusteline <em>scaffold</em>, joka luo tarvittavan rungon ohjelmakoodille. Tämä tapahtuu käskyllä <code>rails generate scaffold &lt;ResurssinNimi&gt; &lt;kentän_nimi&gt;:&lt;kentän_tietotyyppi&gt;</code>.</p>
+                  <p>Meidän tapauksessamme siis haluamme luoda viestejä (Squeek), jotka sisältävät viestin lähettäjän nimimerkin sekä itse viestin:</p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rails generate scaffold Squeek user:string message:text 
       invoke  active_record
