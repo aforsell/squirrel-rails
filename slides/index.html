@@ -217,7 +217,7 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails generate scaffold Squeek
       create    app/assets/stylesheets/scaffolds.css.scss
 action@squirrel-rails-59591:~/workspace/squirrel$                                  
                 </pre>
-                <p>Jotta ohjelmiston tiedot saadaan muiden käyttäjien nähtäville, se pitää tallentaa palvelimelle. Tietovarastona käytetään tietokantaa, jonne data säilötään. Tietokannalle pitää kertoa, mitä sen pitää ostata tallentaa. Tämä tehdään komennolla <code>rake db:migrate</code>.</p>
+                <p>Ohjelmiston data tallennetaan tietokantaan myöhempää käyttöä varten ja muille käyttäjille näytettäväksi. Seuraavaksi luodaan tietokannalle sopiva rakenne edellisessä vaiheessa luotujen viestien tallettamiseen. Tämä tehdään komennolla <code>rake db:migrate</code>.</p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rake db:migrate
 ==  CreateSqueeks: migrating ==================================================
@@ -226,7 +226,7 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rake db:migrate
 ==  CreateSqueeks: migrated (0.0068s) =========================================
 action@squirrel-rails-59591:~/workspace/squirrel$
                 </pre>
-                <p>Jotta ohjelma osaisi näyttää oikean sivun, pitää sille kertoa mitä halutaan näyttää. Vasemman reunan valikosta etsitään tiedosto <em>routes.rb</em>
+                <p>Seuraavaksi konfiguroidaan sovellus siten, että sitä avatessa näytetään lista squeekeistä (facepalm). Vasemman reunan valikosta etsitään tiedosto <em>routes.rb</em>
                 <ol class="breadcrumb">
                   <li>~</li>
                   <li>workspace</li>
@@ -247,7 +247,7 @@ Squirrel::Application.routes.draw do
 
 end
                 </pre> 
-                <p>Tässä kohtaa ohjelman perustoiminnallisuus onkin valmis, eli ei muuta kuin testaamaan <code>rails server</code>.</p>
+                <p>Tässä kohtaa ohjelman perustoiminnallisuus onkin valmis, eli ei muuta kuin testaamaan: <code>rails server</code>.</p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rails server
 =&gt; Booting WEBrick
