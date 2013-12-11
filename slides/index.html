@@ -335,6 +335,18 @@ action@squirrel-rails-59591:~/workspace/squirrel$
                 </pre>
                 <p>Sitten vain <code>rails server</code> ja sivu näyttää jotakuinkin tältä</p>
                 <img src="images/bootstrap_index_data.png">
+                <p>Otsikko menee hieman yläpalkin ylle, korjataan se vielä. Muokataan tiedostoa <em>application.html.erb</em> ja sieltä <code>&lt;body&gt;</code> muotoon <code>&lt;body style="padding-top: 50px"&gt;</code> (rivin 39 paikkeilla).
+                <pre>
+[...]
+    &lt;%= javascript_include_tag "application" %&gt;
+  &lt;/head&gt;
+  &lt;<b>body style="padding-top: 50px"&gt;</b>
+
+    &lt;div class="navbar navbar-fixed-top"&gt;
+[...]
+                </pre>
+                <p>Tadaa:</p>
+                <img src="images/bootstrap_index_data_fixed.png">
               </div>
             </div>
           </div>
