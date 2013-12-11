@@ -286,8 +286,8 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails server
             <div class="row featurette">
               <div class="col-md-12">
                 <h2 class="featurette-heading" style="margin-top: 10px">Tyyliä peliin</h2>
-                <p>Ohjelmistokehityksessä on yleensä järkevää uudelleenkäyttää komponentteja, jotka joku muu on tehnyt valmiiksi samaa käyttötarkoitusta ajatellen. Sama pätee esimerkkimme kohdalla myös käyttöliittymään, eli ohjelmiston käyttäjälle näkyvään osaan. Twitter on nimittäin julkaissut tyylikirjastonsa, joten käytetään sitä.</p>
-                <p>Lisätään siis sopivat palikat osaksi projektia. Rubyssä näitä palikoita kutsutaan nimellä Gem ja tiedostossa <em>Gemfile</em> määritellää projektin käyttämät gemit.</p>
+                <p>Ohjelmistokehityksessä on yleensä järkevää uudelleenkäyttää komponentteja, jotka joku muu on tehnyt valmiiksi samaa käyttötarkoitusta ajatellen. Sama pätee esimerkkimme kohdalla myös käyttöliittymään, eli ohjelmiston käyttäjälle näkyvään osaan. Twitter on nimittäin julkaissut tyylikirjastonsa nimellä Bootstrap, joten otetaan se käyttöön.</p>
+                <p>Lisätään siis sopivat palikat osaksi projektia. Rubyssä näitä palikoita kutsutaan nimellä Gem ja tiedostossa <em>Gemfile</em> määritellään projektin käyttämät gemit.</p>
 
                 <p>Lisätään tiedostoon rivin 30 paikkeille <code>gem 'therubyracer'</code>, <code>gem 'less-rails</code> ja <code>gem 'twitter-bootstrap-rails'</code> seuraavasti:</p>
                 <pre>
@@ -306,7 +306,7 @@ end
 
 # [...]
                 </pre>
-                <p>Jonka jälkeen asennetaan kyseiset palikat komennolla <code>bundle install</code></p>
+                <p>Tämän jälkeen asennetaan kyseiset palikat komennolla <code>bundle install</code></p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ bundle install
 [...]
@@ -314,7 +314,7 @@ Your bundle is complete!
 [...]
 action@squirrel-rails-59591:~/workspace/squirrel$
                 </pre>
-                <p>Kuten aiemmin mainittiin, rails tarjoaa erinäisiä generaattoreita komponenteilleen. Tyylien lisääminen näkymiin tapahtuu seuraavasti: <code>rails generate bootstrap:install static</code>, <code>rails generate bootstrap:layout application fixed -f</code> ja lopulta <code>rails generate bootstrap:themed Squeeks -f</code></p>
+                <p>Kuten aiemmin mainittiin, rails tarjoaa erinäisiä generaattoreita komponenteilleen. Sivuston ulkoasun generointi tapahtuu seuraavasti: <code>rails generate bootstrap:install static</code>, <code>rails generate bootstrap:layout application fixed -f</code> ja lopulta <code>rails generate bootstrap:themed Squeeks -f</code></p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rails generate bootstrap:install static
       insert  app/assets/javascripts/application.js
