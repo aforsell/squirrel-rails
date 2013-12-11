@@ -226,8 +226,27 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rake db:migrate
 ==  CreateSqueeks: migrated (0.0068s) =========================================
 action@squirrel-rails-59591:~/workspace/squirrel$
                 </pre>
-                <span class="label label-important">Important</span>
-                <div class="alert"><p>Tässä editoidaan config/routes.rb root =&gt; "squeeks#index"</p></div>
+                <p>Jotta ohjelma osaisi näyttää oikean sivun, pitää sille kertoa mitä halutaan näyttää. Vasemman reunan valikosta etsitään tiedosto <em>routes.rb</em>
+                <ol class="breadcrumb">
+                  <li>~</li>
+                  <li>workspace</li>
+                  <li>squirrel</li>
+                  <li>config</li>
+                  <li>routes.rb</li>
+                </ol>
+                </p>
+                <p>Lisätään tiedostoon rivi <code>root 'squeeks#index'</code> seuraavasti:</p>
+                <pre>
+Squirrel::Application.routes.draw do
+  resources :squeeks
+  
+  root 'squeeks#index'
+
+  # paljon kommentoituja rivejä
+  # ...
+
+end
+                </pre> 
                 <p>Tässä kohtaa ohjelman perustoiminnallisuus onkin valmis, eli ei muuta kuin testaamaan <code>rails server</code>.</p>
                 <pre>
 action@squirrel-rails-59591:~/workspace/squirrel$ rails server
