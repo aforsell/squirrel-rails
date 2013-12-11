@@ -286,8 +286,56 @@ action@squirrel-rails-59591:~/workspace/squirrel$ rails server
             <div class="row featurette">
               <div class="col-md-12">
                 <h2 class="featurette-heading" style="margin-top: 10px">Tyyliä peliin</h2>
+                <p>Ohjelmistokehityksessä on yleensä järkevää uudelleenkäyttää komponentteja, jotka joku muu on tehnyt valmiiksi samaa käyttötarkoitusta ajatellen. Sama pätee esimerkkimme kohdalla myös käyttöliittymään, eli ohjelmiston käyttäjälle näkyvään osaan. Twitter on nimittäin julkaissut tyylikirjastonsa, joten käytetään sitä.</p>
+                <p>Lisätään siis sopivat palikat osaksi projektia. Rubyssä näitä palikoita kutsutaan nimellä Gem ja tiedostossa <em>Gemfile</em> määritellää projektin käyttämät gemit.</p>
+
+                <p>Lisätään tiedostoon rivin 30 paikkeille <code>gem 'therubyracer'</code>, <code>gem 'less-rails</code> ja <code>gem 'twitter-bootstrap-rails'</code> seuraavasti:</p>
+                <pre>
+# [...]
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 1.2'
+
+gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
+group :doc do
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
+end
+
+# [...]
+                </pre>
+                <p>Jonka jälkeen asennetaan kyseiset palikat komennolla <code>bundle install</code></p>
+                <pre>
+action@squirrel-rails-59591:~/workspace/squirrel$ bundle install
+[...]
+Your bundle is complete!
+[...]
+action@squirrel-rails-59591:~/workspace/squirrel$
+                </pre>
+                <p>Kuten aiemmin mainittiin, rails tarjoaa erinäisiä generaattoreita komponenteilleen. Tyylien lisääminen näkymiin tapahtuu seuraavasti: <code>rails generate bootstrap:install static</code>, <code>rails generate bootstrap:layout application fixed -f</code> ja lopulta <code>rails generate bootstrap:themed Squeeks -f</code></p>
+                <pre>
+action@squirrel-rails-59591:~/workspace/squirrel$ rails generate bootstrap:install static
+      insert  app/assets/javascripts/application.js
+      create  app/assets/javascripts/bootstrap.js.coffee
+      create  app/assets/stylesheets/bootstrap_and_overrides.css
+      create  config/locales/en.bootstrap.yml
+        gsub  app/assets/stylesheets/application.css
+        gsub  app/assets/stylesheets/application.css
+action@squirrel-rails-59591:~/workspace/squirrel$ rails generate bootstrap:layout application fixed -f
+       force  app/views/layouts/application.html.erb
+action@squirrel-rails-59591:~/workspace/squirrel$ rails generate bootstrap:themed Squeeks -f
+       force  app/views/squeeks/index.html.erb
+       force  app/views/squeeks/new.html.erb
+       force  app/views/squeeks/edit.html.erb
+       force  app/views/squeeks/_form.html.erb
+       force  app/views/squeeks/show.html.erb
+action@squirrel-rails-59591:~/workspace/squirrel$
+                </pre>
+                <p>Sitten vain <code>rails server</code> ja sivu näyttää jotakuinkin tältä</p>
+                <img src="images/bootstrap_index_data.png">
               </div>
-			  <p>Ohjelmistokehityksessä on yleensä järkevää uudelleenkäyttää komponentteja, jotka joku muu on tehnyt valmiiksi samaa käyttötarkoitusta ajatellen. Sama pätee esimerkkimme kohdalla myös käyttöliittymään, eli ohjelmiston käyttäjälle näkyvään osaan. Twitter on nimittäin julkaissut tyylikirjastonsa, joten käytetään sitä.</p>
             </div>
           </div>
         </section>
